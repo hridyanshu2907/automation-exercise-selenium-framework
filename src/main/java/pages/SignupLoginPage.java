@@ -16,7 +16,19 @@ public class SignupLoginPage extends BasePage {
 
     private final By signupButton =
             By.cssSelector("button[data-qa='signup-button']");
+    private final By loginHeading =
+            By.xpath("//h2[text()='Login to your account']");
 
+    private final By loginEmailField =
+            By.cssSelector("input[data-qa='login-email']");
+
+    private final By loginPasswordField =
+            By.cssSelector("input[data-qa='login-password']");
+
+    private final By loginButton =
+            By.cssSelector("button[data-qa='login-button']");
+    
+    
     public SignupLoginPage(WebDriver driver) {
         super(driver);
     }
@@ -42,5 +54,28 @@ public class SignupLoginPage extends BasePage {
         enterSignupName(name);
         enterSignupEmail(email);
         clickSignupButton();
+    }
+    
+    public boolean isLoginHeadingVisible() {
+        return isDisplayed(loginHeading);
+    }
+
+    public void enterLoginEmail(String email) {
+        type(loginEmailField, email);
+    }
+
+    public void enterLoginPassword(String password) {
+        type(loginPasswordField, password);
+    }
+
+    public void clickLoginButton() {
+        click(loginButton);
+    }
+
+    public void loginUser(String email, String password) {
+
+        enterLoginEmail(email);
+        enterLoginPassword(password);
+        clickLoginButton();
     }
 }

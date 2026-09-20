@@ -4,10 +4,11 @@
 
 <suite name="Automation Exercise Test Suite">
 
-    <test name="User Registration Tests">
+    <test name="Automation Exercise Tests">
 
         <classes>
             <class name="tests.RegisterUserTest"/>
+            <class name="tests.LoginUserTest"/>
         </classes>
 
     </test>

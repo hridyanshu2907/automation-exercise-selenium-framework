@@ -18,6 +18,9 @@ public class HomePage extends BasePage {
 
     private final By deleteAccountButton =
             By.cssSelector("a[href='/delete_account']");
+    
+    private final By logoutButton =
+            By.cssSelector("a[href='/logout']");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -41,5 +44,8 @@ public class HomePage extends BasePage {
 
     public void clickDeleteAccount() {
         click(deleteAccountButton);
+    }
+    public void clickLogout() {
+        click(logoutButton);
     }
 }
